@@ -1,0 +1,7 @@
+include ../../components/btn/btn
+mixin load(data)
+    +b.SECTION(class="section-load")&attributes(attributes)
+        +e.container.container
+            +b.load
+                +e(h3).title= data.title
+                +b(a).btn(class="btn-mod1" href="#") Download Skype

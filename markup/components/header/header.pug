@@ -1,0 +1,22 @@
+include ../../components/brand/brand
+include ../../components/navList/navList
+include ../../components/platform/platform
+include ../../components/btn/btn
+include ../../components/hamburger/hamburger
+
+mixin header(data)
+    +b.SECTION(class="section-header")&attributes(attributes)
+        +e.container.container
+            +b('header').header
+                +e.top
+                    +hamburger
+                    +brand(brand)
+                    +e('nav').nav
+                        +navList(navList)
+                        +b('a').btn.show(class="btn-mod2" href="#") Sign in
+                        +b('a').btn.hide
+                            +e('img').icon(src="%=static=%img/content/signin-icon.svg" alt="sign in")
+                +e.cnt
+                    +e('h1').title= data.title
+                    +b('a').btn(class="btn-mod1" href="#") Download Skype
+                    +platform(platform)

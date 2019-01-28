@@ -1,0 +1,39 @@
+doctype html
+html(class="no-js", lang="ru")
+    include ../../node_modules/bemto.pug/bemto
+    include ../components/head/head
+    include ../components/header/header
+    include ../components/chat/chat
+    include ../components/share/share
+    include ../components/call/call
+    include ../components/options/options
+    include ../components/load/load
+    include ../components/footer/footer
+
+    include ../components/assideNav/assideNav
+
+    head
+        +head(head.defaults)
+    body.page
+        |%=symbols=%
+        //+b.SECTION(class="header")&attributes(attributes)
+        //    +e.container.container
+                ////- Include your components here
+        +assideNav
+        +header(header)
+        +chat(chat)
+        +share(share)
+        +call(call)
+        +options(options)
+        +load(load)
+
+        +b.SECTION(class="section-footer")&attributes(attributes)
+            +e.container.container
+                +footer(footer)
+
+
+        script(src='%=static=%js/separate-js/svg4everybody.min.js')
+        script svg4everybody();
+
+        //- Main scripts. You can replace it, but I recommend you to leave it here
+        script(src='%=static=%js/main%=hash=%%=min=%.js')

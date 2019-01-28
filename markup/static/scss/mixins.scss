@@ -1,0 +1,146 @@
+// Mixins.
+
+@mixin nl {
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    list-style: none;
+    list-style-position: outside;
+}
+
+@mixin cf {
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    .lt-ie8 & {
+        zoom: 1;
+    }
+}
+
+@mixin blocks-justify {
+    text-align: justify;
+    text-justify: newspaper;
+}
+
+// You can add your own mixins here:
+
+// =============================================================================
+// Функции пересчета значений
+// =============================================================================
+
+@function rem($num) {
+    $strip-unit: $num / ($num * 0 + 1);
+    @return $strip-unit / 16 * 1rem;
+}
+
+@function em($num, $root: 16) {
+    $strip-unit: $num / ($num * 0 + 1);
+    @return $strip-unit / $root * 1em;
+}
+
+
+
+
+/// Block Element
+/// @access public
+/// @param {String} $element - Element's name
+@mixin element($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+/// Block Modifier
+/// @access public
+/// @param {String} $modifier - Modifier's name
+@mixin modifier($modifier) {
+    &_#{$modifier} {
+        @content;
+    }
+}
+
+/// Cascad Element
+/// class.caskad
+@mixin cascad($cascad) {
+    &.#{$cascad} {
+        @content;
+    }
+}
+
+/// @alias element
+@mixin e($element) {
+    @include element($element) {
+        @content;
+    }
+}
+
+/// @alias modifier
+@mixin m($modifier) {
+    @include modifier($modifier) {
+        @content;
+    }
+}
+
+/// @alias modifier
+@mixin c($cascad) {
+    @include cascad($cascad) {
+        @content;
+    }
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+// $name - название для font-family
+// $path - путь к шрифту без формата
+// $weight - font-weight
+// $style - font-style
+// $exts - форматы шрифта, которые используются
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+    $src: null;
+
+    $extmods: (
+        eot: "?",
+        svg: "#" + str-replace($name, " ", "_")
+    );
+
+    $formats: (
+        otf: "opentype",
+        ttf: "truetype"
+    );
+
+    @each $ext in $exts {
+        $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+    }
+
+    @font-face {
+        font-family: quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        src: $src;
+    }
+}
+
+// =============================================================================
+// Функции пересчета значений
+// =============================================================================
+
+@function rem($num) {
+    $strip-unit: $num / ($num * 0 + 1);
+    @return $strip-unit / 16 * 1rem;
+}
+
+@function em($num, $root: 16) {
+    $strip-unit: $num / ($num * 0 + 1);
+    @return $strip-unit / $root * 1em;
+}

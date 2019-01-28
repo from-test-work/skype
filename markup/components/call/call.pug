@@ -1,0 +1,11 @@
+include ../../components/btn/btn
+mixin call(data)
+    +b.SECTION(class="section-call")&attributes(attributes)
+        +e.container.container
+            +b.call
+                +e.cnt
+                    +e('h2').title= data.title
+                    +e('p').text= data.text
+                    +b(a).btn(class="btn-mod3" href="#") Call rates
+                +e.asside
+                    +e('img').img(src= data.src alt= data.alt)

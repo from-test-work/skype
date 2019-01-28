@@ -1,0 +1,22 @@
+.navList{
+    display: flex;
+    justify-content: space-between;
+    &__item{}
+    &__link{
+        color: #bad7f6;
+        font-family: $OpenSans;
+        font-size: rem(17);
+        &.active{
+            color: $white;
+        }
+    }
+}
+
+.navList{
+    & + *{
+        margin-left: rem(40);
+    }
+    &__item + *{
+        margin-left: rem(30);
+    }
+}

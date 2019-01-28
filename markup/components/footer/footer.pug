@@ -1,0 +1,7 @@
+mixin footer(data)
+    footer.footer
+        .footer__cnt
+            .footer__privacy!= data.privacy
+        .footer__asside
+            img.footer__brand(src= data.src alt= data.alt)
+            .footer__copyright= data.copyright

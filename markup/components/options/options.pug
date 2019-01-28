@@ -1,0 +1,14 @@
+include ../../components/btn/btn
+mixin options(data)
+    +b.SECTION(class="section-options")&attributes(attributes)
+        +e.container.container
+            +b.options
+                +e('h2').title= data.title
+                +e('p').note= data.note
+                +e('ul').list
+                    each item in data.items
+                        +e('li').item
+                            +e('img').img(src= item.src alt= item.alt)
+                            +e('a').link(href= item.href)= item.link
+                            +e('p').text= item.text
+                +b(a).btn(class="btn-mod3" href="#") More features

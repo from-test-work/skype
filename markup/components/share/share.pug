@@ -1,0 +1,7 @@
+mixin share(data)
+    +b.SECTION(class="section-share")&attributes(attributes)
+        +e.container.container
+            +b.share
+                +e('h2').title= data.title
+                +e('p').text= data.text
+                +e('img').img(src= data.src alt= data.alt)

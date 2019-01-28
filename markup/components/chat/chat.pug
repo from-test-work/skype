@@ -1,0 +1,9 @@
+mixin chat(data)
+    +b.SECTION(class="section-chat")&attributes(attributes)
+        +e.container.container
+            +b.chat
+                +e.asside
+                    +e('img').img(src= data.src alt= data.alt)
+                +e.cnt
+                    +e('h2').title= data.title
+                    +e('p').text= data.text

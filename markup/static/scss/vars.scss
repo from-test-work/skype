@@ -1,0 +1,25 @@
+// File for scss-vars.
+// For example: main colors, paddings and so on.
+
+$white: #fff;
+$black: #000;
+$red: red;
+$grey: grey;
+
+$skype-green: #7fba00;
+$skype-blue: #2ba7de;
+$skype-grey: #f2f6f7;
+
+$clr-main: #222848;
+$clr-main-gray: #7A7E92;
+$clr-light-gray: #A7A9B6;
+$clr-border: #D5D7DD;
+$clr-orange: #F28C24;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1366px
+);

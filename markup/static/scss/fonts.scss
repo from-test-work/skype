@@ -1,0 +1,36 @@
+/* Your custom fonts here */
+
+/* Example
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../fonts/Custom-Font.eot');
+    src: url('../fonts/Custom-Font.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Custom-Font.woff') format('woff'),
+         url('../fonts/Custom-Font.svg#custom_font') format('svg');
+    font-weight: 400;       // For normal width. It could has another value
+    font-style: normal;     // Also could has another value
+    }
+
+
+// Var for using custom font
+$CustomFont: 'CustomFont', Helvetica, Arial, sans-serif;
+*/
+
+@include font-face('ProximaNova', '../ProximaNova-Light/ProximaNova-Light', 300, $exts: eot woff ttf);
+@include font-face('ProximaNova', '../fonts/ProximaNova-Regular/ProximaNova-Regular', 400, $exts: eot woff ttf);
+@include font-face('ProximaNova', '../ProximaNova-Bold/ProximaNova-Bold', 700, $exts: eot woff ttf);
+@include font-face('ProximaNova', '../ProximaNova-Bold/ProximaNova-Black', 900, $exts: eot woff ttf);
+
+$ProximaNova: 'ProximaNova';
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Philosopher:400,700&subset=cyrillic');
+
+$Philosopher: 'Philosopher', sans-serif;
+$OpenSans: 'Open Sans', sans-serif;
+$Roboto: 'Roboto', sans-serif;

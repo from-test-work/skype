@@ -1,0 +1,30 @@
+.platform{
+    display: flex;
+    flex-direction: column;
+    &__list{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__link{
+        display: flex;
+    }
+    &__note{
+        color: $white;
+        text-align: center;
+        font-size: rem(15);
+        line-height: rem(30);
+    }
+}
+
+.platform{
+    * + & {
+        margin-top: rem(105);
+    }
+    &__item + * {
+        margin-left: rem(35);
+    }
+    * + &__note{
+        margin-top: rem(23);
+    }
+}

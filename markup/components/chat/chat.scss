@@ -1,0 +1,68 @@
+.chat{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__asside{}
+    &__cnt{
+        max-width: rem(390);
+    }
+    &__img{
+        display: block;
+        width: 100%;
+    }
+    &__title{
+        position: relative;
+        font-weight: 300;
+        font-size: rem(42);
+        line-height: rem(53);
+        margin-left: rem(80);
+        color: #484848;
+        &:before{
+            position: absolute;
+            content: url('%=static=%content/chat.png');
+            top: rem(5);
+            left: rem(-80);
+            width: rem(51);
+            height: rem(42);
+        }
+    }
+    &__text{
+        font-size: rem(20);
+        line-height: rem(31);
+        color: #484848;
+    }
+}
+
+.chat{
+    &__title + *{
+        margin-top: rem(30);
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .chat{
+        flex-direction: column-reverse;
+        &__cnt{
+            max-width: rem(579);
+        }
+        &__title{
+            font-size: rem(28);
+        }
+        &__text{
+            font-size: rem(18);
+        }
+    }
+
+    .chat{
+         &__cnt{
+            margin-bottom: rem(50);
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    &__cnt{
+        max-width: 100%;
+    }
+}

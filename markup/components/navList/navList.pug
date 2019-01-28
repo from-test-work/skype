@@ -1,0 +1,5 @@
+mixin navList(data)
+    +b('ul').navList
+        each item in data.items
+            +e('li').item
+                +e('a').link(class= item.class href= item.href )= item.param

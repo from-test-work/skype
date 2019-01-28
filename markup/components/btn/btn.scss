@@ -1,0 +1,48 @@
+$btn-height: 60px;
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    max-width: rem(220);
+    height: $btn-height;
+    padding: 0 rem(25);
+    font-size: 18px;
+    font-family: $ProximaNova;
+    font-weight: 400;
+    text-transform: uppercase;
+    border-radius: calc(#{$btn-height} / 2);
+
+    &__icon{
+        width: rem(25);
+        height: rem(25);
+    }
+
+    &.hide{
+        display: none;
+    }
+
+    &.btn-mod1{
+        background-color: $skype-green;
+        color: $white;
+    }
+
+    &.btn-mod2{
+        background-color: transparent;
+        border: rem(2) solid $skype-green;
+        color: $skype-green;
+        &:hover{
+            background-color: $white;
+            border: rem(2) solid $white;
+        }
+    }
+
+    &.btn-mod3{
+        background-color: transparent;
+        border: rem(2) solid $skype-blue;
+        color: $skype-blue;
+    }
+}
+
+
